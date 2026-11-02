@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BÉNIN IMMO – La connexion directe entre propriétaires et démarcheurs</title>
+<meta name="description" content="BÉNIN IMMO : trouvez une chambre à louer au Bénin. Disponibilité vérifiée avant tout paiement, coordonnées du propriétaire débloquées dès 500 FCFA.">
+<meta name="theme-color" content="#008751">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23008751'/%3E%3Cpath d='M12 32 32 14l20 18v18H38V38H26v12H12z' fill='%23FCD116'/%3E%3C/svg%3E">
+<style>
+:root{--g:#008751;--gd:#00663d;--y:#FCD116;--r:#E8112D;--ink:#14201a;--mut:#5d6b63;--bg:#f5f8f4;--card:#fff;--line:#dfe7e0;--rad:14px;--sh:0 4px 18px rgba(20,32,26,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--gd);text-decoration:none}
+a:hover{text-decoration:underline}
+main{flex:1;width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.flag{height:5px;background:linear-gradient(90deg,var(--g) 0 40%,var(--y) 40% 70%,var(--r) 70%)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:var(--ink);letter-spacing:.3px}
+.logo:hover{text-decoration:none}
+.logo i{width:36px;height:36px;border-radius:10px;background:var(--g);display:grid;place-items:center}
+.logo svg{width:22px;height:22px}
+.logo b{color:var(--g)}
+nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+nav a,nav button.lnk{padding:8px 12px;border-radius:10px;color:var(--ink);font-weight:600;font-size:.95rem;background:none;border:0;cursor:pointer;font-family:inherit}
+nav a:hover,nav button.lnk:hover{background:#eef4ee;text-decoration:none}
+nav a.on{background:#e3f3ea;color:var(--gd)}
+.badge{background:var(--r);color:#fff;border-radius:99px;font-size:.72rem;padding:1px 7px;margin-left:4px}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:1.1rem;cursor:pointer}
+@media(max-width:820px){.burger{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;flex-direction:column;align-items:stretch}nav.open{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 18px;border-radius:12px;border:0;font-weight:700;font-size:.97rem;cursor:pointer;font-family:inherit;background:var(--g);color:#fff;transition:.15s}
+.btn:hover{background:var(--gd);text-decoration:none;transform:translateY(-1px)}
+.btn.y{background:var(--y);color:#1b1b00}.btn.y:hover{background:#e9bd00}
+.btn.o{background:#fff;color:var(--gd);border:2px solid var(--g)}.btn.o:hover{background:#eef8f2}
+.btn.r{background:var(--r)}.btn.r:hover{background:#c20e25}
+.btn.s{padding:7px 12px;font-size:.86rem;border-radius:9px}
+.btn.w{width:100%}
+.btn[disabled]{opacity:.55;cursor:not-allowed;transform:none}
+.hero{background:linear-gradient(135deg,#005c37,#00a05f 60%,#2bb673);color:#fff;padding:54px 0 70px;position:relative;overflow-x:clip;clip-path:inset(0 0 -520px 0)}
+.hero:after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:rgba(252,209,22,.18)}
+.hero h1{font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.15;max-width:760px;margin-bottom:12px}
+.hero p.sl{font-size:1.1rem;max-width:640px;opacity:.95;margin-bottom:26px}
+.sbox{background:#fff;color:var(--ink);border-radius:var(--rad);padding:16px;box-shadow:var(--sh);display:grid;grid-template-columns:repeat(4,1fr) auto;gap:10px;align-items:end;position:relative;z-index:2;max-width:980px}
+@media(max-width:820px){.sbox{grid-template-columns:1fr 1fr}.sbox .btn{grid-column:1/-1}}
+@media(max-width:480px){.sbox{grid-template-columns:1fr}}
+label{display:block;font-size:.82rem;font-weight:700;color:var(--mut);margin-bottom:4px}
+input,select,textarea{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font-size:.97rem;font-family:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--g);box-shadow:0 0 0 3px rgba(0,135,81,.15)}
+textarea{min-height:110px;resize:vertical}
+section{padding:42px 0}
+h2.t{font-size:1.55rem;margin-bottom:6px}
+p.sub{color:var(--mut);margin-bottom:22px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--y);display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+.step h3{margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;display:block;color:inherit;transition:.18s;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh);text-decoration:none}
+.cover{height:170px;background:#dfe;display:grid;place-items:center;font-size:3rem;color:rgba(255,255,255,.9);overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cb{padding:14px}
+.price{font-size:1.2rem;font-weight:800;color:var(--gd)}
+.price small{font-weight:500;color:var(--mut);font-size:.8rem}
+.cb h3{font-size:1rem;margin:4px 0}
+.loc{font-size:.9rem;font-weight:600}
+.mut{color:var(--mut);font-size:.88rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{background:#eef6ef;color:var(--gd);border-radius:99px;font-size:.76rem;padding:3px 9px;font-weight:600}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.two{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.filters{display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:start}
+@media(max-width:860px){.filters{grid-template-columns:1fr}}
+.fld{margin-bottom:12px}
+.chk{display:flex;align-items:center;gap:8px;margin:6px 0;font-weight:500;color:var(--ink);font-size:.93rem}
+.chk input{width:auto}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+.gal .main{height:340px;border-radius:var(--rad);overflow:hidden;background:#dfe;display:grid;place-items:center;font-size:5rem;color:rgba(255,255,255,.9)}
+.gal .main img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.thumbs img{width:78px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent}
+.thumbs img:hover{border-color:var(--g)}
+.lock{background:#fff8dc;border:1.5px dashed #d9b400;border-radius:12px;padding:14px;margin:12px 0;font-family:ui-monospace,Menlo,monospace;font-size:.92rem}
+.lock div{margin:4px 0}
+.open{background:#e8f7ee;border:1.5px solid #8fd2ae;border-radius:12px;padding:14px;margin:12px 0}
+.open div{margin:5px 0}
+.st{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.78rem;font-weight:700}
+.st.active{background:#dff5e8;color:#0b6b3c}.st.veille{background:#fff1c9;color:#8a6500}.st.inactive{background:#fde0e3;color:#a3001a}.st.pending{background:#e6ecff;color:#2a3d99}.st.refuse{background:#eee;color:#555}.st.ok{background:#dff5e8;color:#0b6b3c}
+.note{background:#eef4ff;border:1px solid #c8d8ff;border-radius:10px;padding:10px 12px;font-size:.9rem;margin:10px 0}
+.warn{background:#fff3d6;border:1px solid #f0d27a}
+.err{background:#fde8ea;border:1px solid #f4b3bb}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.78rem;text-transform:uppercase;color:var(--mut);letter-spacing:.4px}
+.tw{overflow-x:auto}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{padding:8px 14px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-weight:700;cursor:pointer;font-family:inherit}
+.tabs button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-bottom:18px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:var(--rad);padding:16px}
+.kpi b{display:block;font-size:1.5rem;color:var(--gd)}
+.pay{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;border:2px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;background:#fff}
+.opt:has(input:checked){border-color:var(--g);background:#effaf3}
+.opt input{width:auto}
+.opt .p{margin-left:auto;font-weight:800;color:var(--gd)}
+.opt.dis{opacity:.55;cursor:not-allowed}
+.center{max-width:460px;margin:34px auto}
+.demo{background:#fff;border:1.5px dashed var(--g);border-radius:12px;padding:12px;margin-top:16px;font-size:.88rem}
+.demo button{margin:3px 3px 0 0}
+.cta{background:linear-gradient(120deg,var(--y),#ffe36b);border-radius:var(--rad);padding:28px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+footer{background:#0f1f17;color:#c8d6cd;padding:30px 0;margin-top:30px;font-size:.9rem}
+footer a{color:#fff}
+footer .fl{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:99;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.tt{background:#14201a;color:#fff;padding:11px 18px;border-radius:12px;box-shadow:var(--sh);font-weight:600;max-width:90vw;animation:in .25s}
+.tt.err{background:var(--r)}.tt.ok{background:var(--g)}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.empty{text-align:center;padding:40px 16px;color:var(--mut)}
+.empty .e{font-size:2.6rem}
+.nt{border-left:4px solid var(--g);background:#fff;padding:10px 12px;border-radius:8px;margin-bottom:8px;border:1px solid var(--line);border-left-width:4px}
+.nt.warn{border-left-color:#d9a400}.nt.unread{background:#f2fbf6}
+.pillrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.hide{display:none}
+.cmb{position:relative}
+.dd{position:absolute;left:0;right:0;top:calc(100% + 4px);background:#fff;border:1.5px solid var(--g);border-radius:10px;box-shadow:var(--sh);max-height:250px;overflow-y:auto;z-index:60;list-style:none;padding:4px;text-align:left}
+.dd li{padding:9px 10px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;align-items:baseline;color:var(--ink);font-size:.95rem}
+.dd li small{color:var(--mut);font-size:.76rem;flex-shrink:0}
+.dd li:hover,.dd li.act{background:#e3f3ea}
+.dd li.no{color:var(--mut);cursor:default;font-size:.9rem}
+.dd li.no:hover{background:none}
+.legal{background:#fff8e1;border:1.5px solid #f0d27a;border-left:6px solid #e0a800;border-radius:var(--rad);padding:18px 20px}
+.legal ul{margin:8px 0 10px 20px}
+.legal li{margin:5px 0}
+.prose h3{margin:18px 0 6px}
+.prose p,.prose li{margin:6px 0}
+.prose ul{margin-left:20px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:20px 12px}
+.mb{background:var(--bg);border-radius:14px;max-width:860px;width:100%;position:relative;padding:8px 10px 20px}
+.mb section{padding:46px 0 6px}
+.mb .x{position:absolute;right:12px;top:12px}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;position:relative;z-index:2}
+.btn.big{padding:15px 26px;font-size:1.05rem;border-radius:14px}
+.btn.wh{background:#fff;color:var(--gd)}.btn.wh:hover{background:#eef8f2}
+</style>
+</head>
+<body>
+<header>
+  <div class="flag"></div>
+  <div class="wrap hbar">
+    <a class="logo" href="#/"><i><svg viewBox="0 0 64 64"><path d="M8 32 32 10l24 22v22H40V38H24v16H8z" fill="#FCD116"/></svg></i><span>BÉNIN <b>IMMO</b></span></a>
+    <button class="burger" onclick="A.menu()" aria-label="Menu">☰</button>
+    <nav id="nav"></nav>
+  </div>
+</header>
+<main id="app"></main>
+<footer>
+  <div class="wrap fl">
+    <div><b style="color:#fff">BÉNIN IMMO</b><br>La connexion directe entre propriétaires et démarcheurs.</div>
+    <div>BÉNIN IMMO est une plateforme de mise en relation, pas une agence immobilière.<br><a href="#/conditions">Conditions d’utilisation</a> • © <span id="yr"></span> BÉNIN IMMO – Tous droits réservés.</div>
+  </div>
+</footer>
+<div id="toast"></div>
+
+<script>
+(function(){
+'use strict';
+var KEY='beninimmo_db_v1', H24=24*3600*1000;
+var EQUIP={simple:'Chambre simple',douche:'Douche interne',meuble:'Chambre meublée',compteur:'Compteur personnel',parking:'Parking',goudron:'Accès goudronné'};
+var PRICE_ONE=500, PACKS={5:2000,10:4000};
+var METHODS=[['mtn','MTN Mobile Money'],['moov','Moov Money'],['orange','Orange Money'],['card','Carte bancaire']];
+var db=load(), F={ville:'',quartier:'',min:'',max:'',eq:[]}, adminTab='stats', nextAfterLogin=null, formPhotos=[], warned=false, cur=(location.hash.replace(/^#/,'')||'/');
+
+/* ---------- les 77 communes du Bénin (12 départements) ---------- */
+var DEP={
+ 'Alibori':['Banikoara','Gogounou','Kandi','Karimama','Malanville','Ségbana'],
+ 'Atacora':['Boukoumbé','Cobly','Kérou','Kouandé','Matéri','Natitingou','Péhunco','Tanguiéta','Toucountouna'],
+ 'Atlantique':['Abomey-Calavi','Allada','Kpomassè','Ouidah','Sô-Ava','Toffo','Tori-Bossito','Zè'],
+ 'Borgou':['Bembèrèkè','Kalalé','N’Dali','Nikki','Parakou','Pèrèrè','Sinendé','Tchaourou'],
+ 'Collines':['Bantè','Dassa-Zoumè','Glazoué','Ouèssè','Savalou','Savè'],
+ 'Couffo':['Aplahoué','Djakotomey','Dogbo','Klouékanmè','Lalo','Toviklin'],
+ 'Donga':['Bassila','Copargo','Djougou','Ouaké'],
+ 'Littoral':['Cotonou'],
+ 'Mono':['Athiémé','Bopa','Comè','Grand-Popo','Houéyogbé','Lokossa'],
+ 'Ouémé':['Adjarra','Adjohoun','Aguégués','Akpro-Missérété','Avrankou','Bonou','Dangbo','Porto-Novo','Sèmè-Podji'],
+ 'Plateau':['Adja-Ouèrè','Ifangni','Kétou','Pobè','Sakété'],
+ 'Zou':['Abomey','Agbangnizoun','Bohicon','Covè','Djidja','Ouinhi','Zagnanado','Za-Kpota','Zogbodomey']
+};
+function nk(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'')}
+var COMMUNES=[];
+Object.keys(DEP).forEach(function(d){DEP[d].forEach(function(c){COMMUNES.push({n:c,d:d,k:nk(c)})})});
+COMMUNES.sort(function(a,b){return a.k<b.k?-1:a.k>b.k?1:0});
+function communeFind(q){var k=nk(q);return COMMUNES.filter(function(c){return c.k===k})[0]||null}
+function communeSearch(q){
+  var k=nk(q);if(!k)return COMMUNES.slice();
+  var a=[],b=[];
+  COMMUNES.forEach(function(x){
+    if(x.k.indexOf(k)===0)a.push(x);
+    else if(x.n.split(/[^A-Za-zÀ-ÿ]+/).some(function(w){return w&&nk(w).indexOf(k)===0}))b.push(x);
+  });
+  return a.concat(b);
+}
+function matchVille(ville,q){
+  var k=nk(q);if(!k)return true;
+  return communeFind(q)?nk(ville)===k:nk(ville).indexOf(k)===0;
+}
+function hl(name,q){
+  var kq=nk(q);if(!kq||nk(name).indexOf(kq)!==0)return esc(name);
+  var cnt=0,i=0;while(i<name.length&&cnt<kq.length){if(nk(name.charAt(i)))cnt++;i++}
+  return '<b>'+esc(name.slice(0,i))+'</b>'+esc(name.slice(i));
+}
+var WARN='<div class="note warn" style="margin:10px 0 0">⚠️ BÉNIN IMMO vous a seulement mis en contact avec le propriétaire. Visitez le logement et vérifiez tout (propriétaire, état, loyer, caution, contrat) avant de verser une avance : la suite ne concerne que vous et lui.</div>';
+
+/* ---------- données ---------- */
+function seed(){
+  var d={seq:100,offset:0,session:null,users:[],listings:[],requests:[],payments:[],unlocks:[],notifs:[]};
+  var t=Date.now();
+  d.users.push({id:'u1',nom:'Administrateur',tel:'0100000000',email:'admin@beninimmo.bj',mdp:'admin123',role:'admin',date:t,credits:0,suspendu:false});
+  d.users.push({id:'u2',nom:'Marie Houénou',tel:'0197000001',email:'marie@demo.bj',mdp:'demo123',role:'proprio',date:t,credits:0,suspendu:false});
+  d.users.push({id:'u3',nom:'Paul Agbodjan',tel:'0197000002',email:'paul@demo.bj',mdp:'demo123',role:'proprio',date:t,credits:0,suspendu:false});
+  d.users.push({id:'u4',nom:'Awa Sossou',tel:'0196000003',email:'awa@demo.bj',mdp:'demo123',role:'demarcheur',date:t,credits:0,suspendu:false});
+  var L=[
+    ['u2','Chambre salon moderne à Agla','Cotonou','Agla','Environ 300 mètres du Carrefour IITA','Maison N°145, Rue des Palmiers, Agla',6.3562,2.3913,35000,70000,1,['douche','compteur','goudron'],'Chambre salon carrelée, bien aérée, cour sécurisée avec portail. Eau et électricité disponibles, voisinage calme.'],
+    ['u2','Chambre meublée proche du marché','Cotonou','Cadjèhoun','Environ 500 mètres de la Place Bulgarie','Villa 22, Rue 305, Cadjèhoun',6.3593,2.3875,60000,120000,1,['meuble','douche','compteur','parking'],'Chambre meublée avec lit, armoire et ventilateur. Parking disponible dans la cour.'],
+    ['u3','Chambre simple pour étudiant','Abomey-Calavi','Godomey','Derrière la station Total de Godomey','Lot 87, Godomey Gare',6.4046,2.3369,15000,30000,1,['simple','compteur'],'Chambre simple idéale pour étudiant, à 10 minutes de l’université.'],
+    ['u3','Deux chambres salon avec douche','Porto-Novo','Ouando','À 200 mètres du carrefour Ouando','Maison Akpo, Ouando',6.5002,2.6286,40000,80000,2,['douche','compteur','parking','goudron'],'Maison spacieuse avec deux chambres et grand salon, quartier résidentiel calme.'],
+    ['u2','Chambre salon à Fidjrossè','Cotonou','Fidjrossè','Environ 400 mètres de la plage de Fidjrossè','Rue des Pêcheurs, Fidjrossè',6.3468,2.3586,45000,90000,1,['douche','compteur','goudron'],'À deux pas de la mer, chambre salon avec carrelage et grande cour.'],
+    ['u3','Chambre simple à Banikanni','Parakou','Banikanni','Près du carrefour Banikanni','Banikanni, rue du marché',9.3372,2.6303,12000,24000,1,['simple','compteur'],'Chambre simple propre, compteur personnel, cour commune.']
+  ];
+  L.forEach(function(x,i){d.listings.push({id:'l'+(i+1),ownerId:x[0],titre:x[1],ville:x[2],quartier:x[3],repere:x[4],adresse:x[5],lat:x[6],lng:x[7],prix:x[8],caution:x[9],nb:x[10],equip:x[11],desc:x[12],tel:d.users.find(function(u){return u.id===x[0]}).tel,dispo:'',photos:[],statut:'active',valide:'ok',reactAt:0,deleted:false,date:t-i*86400000});});
+  try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}
+  return d;
+}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var d=JSON.parse(r);if(d&&d.users)return d}}catch(e){}return seed()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){if(!warned){warned=true;toast('Données non enregistrées (aperçu limité ou stockage plein). Ouvrez le fichier dans votre navigateur pour les conserver.','err')}}}
+function nowT(){return Date.now()+db.offset}
+function nid(p){return p+(db.seq++)}
+function me(){return db.users.find(function(u){return u.id===db.session})||null}
+function listing(id){return db.listings.find(function(l){return l.id===id})}
+function user(id){return db.users.find(function(u){return u.id===id})}
+function isPublic(l){return !l.deleted&&l.valide==='ok'&&l.statut==='active'}
+function normTel(s){return String(s||'').replace(/\D/g,'').replace(/^229/,'')}
+
+/* ---------- utilitaires ---------- */
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function fmt(n){return Number(n||0).toLocaleString('fr-FR')+' FCFA'}
+function dt(ts){return new Date(ts).toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})}
+function toast(m,t){var el=document.createElement('div');el.className='tt '+(t||'');el.textContent=m;var c=document.getElementById('toast');c.appendChild(el);setTimeout(function(){el.remove()},3800)}
+function go(h){
+  cur=h.charAt(0)==='/'?h:'/'+h;
+  try{if(location.hash!=='#'+cur)location.hash='#'+cur}catch(e){}
+  setTimeout(render,0);
+}
+function hue(id){var s=0;for(var i=0;i<id.length;i++)s=(s*31+id.charCodeAt(i))%360;return s}
+function cover(l){
+  if(l.photos&&l.photos.length)return '<div class="cover"><img loading="lazy" alt="'+esc(l.titre)+'" src="'+l.photos[0]+'"></div>';
+  var h=hue(l.id);return '<div class="cover" style="background:linear-gradient(135deg,hsl('+h+',55%,45%),hsl('+((h+50)%360)+',60%,60%))">🏠</div>';
+}
+function tags(l,n){return (l.equip||[]).slice(0,n||9).map(function(k){return '<span class="tag">'+esc(EQUIP[k]||k)+'</span>'}).join('')}
+function stLabel(s){return {active:'Active',veille:'En veille',inactive:'Inactive'}[s]||s}
+function vLabel(v){return {pending:'En attente de validation',ok:'Validée',refuse:'Refusée'}[v]||v}
+function mapsUrl(l){return 'https://www.google.com/maps?q='+encodeURIComponent(l.lat+','+l.lng)}
+function notify(uid,title,text,type){db.notifs.push({id:nid('n'),userId:uid,title:title,text:text,type:type||'info',date:nowT(),read:false})}
+
+/* ---------- règles métier ---------- */
+function checkInactive(l){
+  if(l.statut!=='active')return;
+  var rs=db.requests.filter(function(r){return r.listingId===l.id&&r.date>=(l.reactAt||0)&&r.reponse!=='pending'}).sort(function(a,b){return a.date-b.date});
+  var n=0;for(var i=rs.length-1;i>=0;i--){if(rs[i].reponse==='ignoree')n++;else break}
+  if(n>=3){l.statut='inactive';notify(l.ownerId,'Annonce désactivée','Votre annonce « '+l.titre+' » a été désactivée automatiquement suite à plusieurs demandes de disponibilité restées sans réponse. Veuillez confirmer que votre logement est toujours disponible pour réactiver l’annonce.','warn')}
+}
+function sweep(){
+  var ch=false;
+  db.requests.forEach(function(r){
+    if(r.reponse==='pending'&&nowT()-r.date>H24){r.reponse='ignoree';r.dateRep=nowT();ch=true;var l=listing(r.listingId);if(l)checkInactive(l)}
+  });
+  if(ch)save();
+}
+function lastRequest(uid,lid){
+  var rs=db.requests.filter(function(r){return r.userId===uid&&r.listingId===lid}).sort(function(a,b){return b.date-a.date});
+  return rs[0]||null;
+}
+function confirmedOk(uid,lid){
+  var r=lastRequest(uid,lid);
+  return r&&r.reponse==='oui'&&nowT()-r.dateRep<H24?r:null;
+}
+function unlocked(uid,lid){return db.unlocks.find(function(x){return x.userId===uid&&x.listingId===lid})||null}
+function doUnlock(u,l,via){
+  db.unlocks.push({id:nid('k'),userId:u.id,listingId:l.id,date:nowT(),via:via});
+  notify(l.ownerId,'Coordonnées achetées','Un démarcheur vient d’acheter les coordonnées de « '+l.titre+' ».');
+}
+
+/* ---------- vues ---------- */
+function card(l){
+  return '<a class="card" href="#/annonce/'+l.id+'">'+cover(l)+'<div class="cb"><div class="price">'+fmt(l.prix)+'<small> /mois</small></div><h3>'+esc(l.titre)+'</h3><p class="loc">📍 '+esc(l.quartier)+', '+esc(l.ville)+'</p><p class="mut">'+esc(l.repere)+'</p><div class="tags">'+tags(l,3)+'</div></div></a>';
+}
+function combo(id,val,ph,req){
+  return '<div class="cmb"><input id="'+id+'" data-combo="1" autocomplete="off" role="combobox" aria-autocomplete="list"'+(req?' required':'')+' value="'+esc(val)+'" placeholder="'+esc(ph)+'"><ul class="dd hide" role="listbox"></ul></div>';
+}
+
+function vHome(){
+  var pub=db.listings.filter(isPublic).sort(function(a,b){return b.date-a.date});
+    return '<section class="hero"><div class="wrap"><h1>Trouvez une chambre <u style="text-decoration-color:var(--y);text-decoration-thickness:5px">vraiment disponible</u> au Bénin</h1>'+
+  '<p class="sl">La connexion directe entre propriétaires et démarcheurs. Vous ne payez jamais pour une chambre dont la disponibilité n’a pas été confirmée.</p>'+
+  '<div class="hbtns"><a class="btn y big" href="#/chambres">🔎 Trouver une chambre</a><a class="btn wh big" href="#/publier">🏠 Publier une annonce de chambre</a></div>'+
+  '<form class="sbox" onsubmit="return A.quick(event)"><div><label>Commune</label>'+combo('qv','','Tapez les premières lettres…')+'</div><div><label>Quartier</label><input id="qq" placeholder="Ex : Agla"></div><div><label>Budget max (FCFA)</label><input id="qm" type="number" min="0" placeholder="Ex : 40000"></div><div><label>Équipement</label><select id="qe"><option value="">Peu importe</option>'+Object.keys(EQUIP).map(function(k){return '<option value="'+k+'">'+EQUIP[k]+'</option>'}).join('')+'</select></div><button class="btn y" type="submit">🔍 Rechercher</button></form></div></section>'+
+  '<section><div class="wrap"><h2 class="t">Comment ça marche ?</h2><p class="sub">Quatre étapes simples, sans déplacement inutile.</p><div class="steps">'+
+  '<div class="step"><div class="n">1</div><h3>Parcourez gratuitement</h3><p class="mut">Photos, quartier, loyer, caution, équipements et localisation approximative sont visibles par tous.</p></div>'+
+  '<div class="step"><div class="n">2</div><h3>Vérifiez la disponibilité</h3><p class="mut">Un clic envoie une demande au propriétaire (notification et WhatsApp). Il répond OUI ou NON.</p></div>'+
+  '<div class="step"><div class="n">3</div><h3>Débloquez les coordonnées</h3><p class="mut">Si c’est OUI, payez dès 500 FCFA à BÉNIN IMMO (frais de service, pas une avance de loyer) pour obtenir numéro, adresse et GPS exacts.</p></div>'+
+  '<div class="step"><div class="n">4</div><h3>Visitez et vérifiez</h3><p class="mut">Ouvrez l’itinéraire dans Google Maps, rencontrez le propriétaire et vérifiez tout avant de verser la moindre avance.</p></div></div></div></section>'+
+  '<section style="padding-top:0"><div class="wrap"><div class="legal"><h3>⚠️ Important à savoir</h3><ul><li><b>BÉNIN IMMO n’est pas une agence immobilière.</b> Le site met seulement en contact les démarcheurs ou locataires et les propriétaires.</li><li><b>Le paiement concerne uniquement le site.</b> Les 500 FCFA (ou les packs) servent à obtenir les informations complémentaires du propriétaire. Ce n’est <u>pas</u> une avance de loyer ni une caution.</li><li><b>Après le déblocage, le site ne garantit rien.</b> Visitez le logement et vérifiez tout (propriétaire, état, loyer, caution, contrat) avant de verser une avance au propriétaire. La suite ne concerne que vous et lui.</li></ul><a href="#/conditions">Lire les conditions d’utilisation →</a></div></div></section>'+
+  '<section style="padding-top:0"><div class="wrap"><h2 class="t">Dernières chambres publiées</h2><p class="sub">Annonces actives et validées par notre équipe.</p>'+
+  (pub.length?'<div class="grid">'+pub.slice(0,6).map(card).join('')+'</div><p style="margin-top:20px"><a class="btn" href="#/chambres">🔎 Voir toutes les chambres</a></p>':'<div class="empty"><div class="e">🏠</div>Aucune annonce pour le moment.</div>')+'</div></section>'+
+  '<section style="padding-top:0"><div class="wrap"><h2 class="t">Tarifs simples</h2><p class="sub">Publier est gratuit pour les propriétaires. Les démarcheurs paient uniquement quand la chambre est confirmée disponible. Ce montant rémunère le service de mise en relation de BÉNIN IMMO : il ne concerne ni le loyer, ni la caution, ni aucune avance versée au propriétaire.</p><div class="steps">'+
+  '<div class="step"><h3>Achat individuel</h3><div class="price">'+fmt(PRICE_ONE)+'</div><p class="mut">1 coordonnée complète</p></div>'+
+  '<div class="step"><h3>Pack 5</h3><div class="price">'+fmt(PACKS[5])+'</div><p class="mut">5 coordonnées</p></div>'+
+  '<div class="step"><h3>Pack 10</h3><div class="price">'+fmt(PACKS[10])+'</div><p class="mut">10 coordonnées</p></div>'+
+  '<div class="step"><h3>Premium 30 jours</h3><div class="price">Bientôt</div><p class="mut">Accès illimité, tarif à venir</p></div></div></div></section>'+
+  '<section style="padding-top:0"><div class="wrap"><div class="cta"><div><h2 class="t" style="margin:0">Vous avez une chambre à louer ?</h2><p>Publiez gratuitement et touchez des démarcheurs sérieux. Répondez simplement OUI ou NON aux demandes.</p></div><a class="btn" href="#/publier">Publier une annonce gratuitement</a></div></div></section>';
+}
+
+function vList(){
+  var res=db.listings.filter(isPublic).filter(function(l){
+    if(!matchVille(l.ville,F.ville))return false;
+    if(F.quartier&&l.quartier.toLowerCase().indexOf(F.quartier.toLowerCase())<0)return false;
+    if(F.min!==''&&l.prix<Number(F.min))return false;
+    if(F.max!==''&&l.prix>Number(F.max))return false;
+    return F.eq.every(function(k){return l.equip.indexOf(k)>=0});
+  }).sort(function(a,b){return b.date-a.date});
+    var eq=Object.keys(EQUIP).map(function(k){return '<label class="chk"><input type="checkbox" name="eq" value="'+k+'"'+(F.eq.indexOf(k)>=0?' checked':'')+'> '+EQUIP[k]+'</label>'}).join('');
+  return '<section><div class="wrap"><h2 class="t">Trouver une chambre</h2><p class="sub">'+res.length+' résultat'+(res.length>1?'s':'')+'</p><div class="filters"><form class="panel" onsubmit="return A.filter(event)"><div class="fld"><label>Commune</label>'+combo('fv',F.ville,'Toutes les communes')+'</div><div class="fld"><label>Quartier</label><input id="fq" value="'+esc(F.quartier)+'" placeholder="Ex : Agla"></div><div class="row2"><div class="fld"><label>Prix min</label><input id="fmin" type="number" min="0" value="'+esc(F.min)+'"></div><div class="fld"><label>Prix max</label><input id="fmax" type="number" min="0" value="'+esc(F.max)+'"></div></div><div class="fld"><label>Équipements</label>'+eq+'</div><button class="btn w" type="submit">Appliquer</button><button class="btn o w" style="margin-top:8px" type="button" onclick="A.resetFilter()">Réinitialiser</button></form><div>'+
+  (res.length?'<div class="grid">'+res.map(card).join('')+'</div>':'<div class="empty"><div class="e">🔎</div>Aucune chambre ne correspond à votre recherche.</div>')+'</div></div></div></section>';
+}
+
+function coordsBox(l,w){
+  return '<div class="open"><b>✅ Coordonnées débloquées</b><div>📞 Téléphone : <b>'+esc(l.tel)+'</b> — <a href="tel:'+esc(l.tel)+'">Appeler</a></div><div>📍 Adresse : <b>'+esc(l.adresse)+'</b></div><div>🧭 GPS : <b>'+esc(l.lat)+', '+esc(l.lng)+'</b></div><div style="margin-top:8px"><a class="btn s" target="_blank" rel="noopener" href="'+mapsUrl(l)+'">📍 Ouvrir dans Google Maps</a></div>'+(w?WARN:'')+'</div>';
+}
+function lockBox(){
+  return '<div class="lock"><div>📞 Téléphone : ********</div><div>📍 Adresse exacte : ********</div><div>🧭 GPS : ********</div><div>🗺️ Lien Google Maps : ********</div></div>';
+}
+function actionPanel(l){
+  var u=me();
+  if(!u)return lockBox()+'<p class="mut" style="margin-bottom:10px">Connectez-vous pour vérifier la disponibilité de cette chambre.</p><button class="btn w" onclick="A.needLogin(\'/annonce/'+l.id+'\')">✅ Vérifier la disponibilité</button>';
+  if(u.role==='admin'||u.id===l.ownerId)return coordsBox(l)+'<div class="note">Vous consultez cette annonce en tant que '+(u.role==='admin'?'administrateur':'propriétaire')+'.</div>';
+  if(unlocked(u.id,l.id))return coordsBox(l,1);
+  if(!isPublic(l))return lockBox()+'<div class="note warn">Cette chambre n’est plus disponible actuellement.</div>';
+  var r=lastRequest(u.id,l.id), ok=confirmedOk(u.id,l.id);
+  if(ok)return lockBox()+'<div class="note" style="background:#e8f7ee;border-color:#8fd2ae">✅ Cette chambre est disponible. Confirmation reçue le '+dt(ok.dateRep)+' (valable jusqu’au '+dt(ok.dateRep+H24)+').</div><a class="btn y w" href="#/paiement/'+l.id+'">🔒 Débloquer les coordonnées complètes</a>';
+  if(r&&r.reponse==='pending')return lockBox()+'<div class="note">⏳ Demande envoyée le '+dt(r.date)+'. Le propriétaire a jusqu’au '+dt(r.date+H24)+' pour répondre. Revenez consulter cette page : la réponse s’affichera ici.</div>';
+  var extra='';
+  if(r&&r.reponse==='ignoree')extra='<div class="note warn">Votre dernière demande est restée sans réponse. Vous pouvez en envoyer une nouvelle.</div>';
+  if(r&&r.reponse==='oui')extra='<div class="note warn">La confirmation de disponibilité date de plus de 24 h. Veuillez la renouveler avant de payer.</div>';
+  return lockBox()+extra+'<button class="btn w" onclick="A.verify(\''+l.id+'\')">✅ Vérifier la disponibilité</button><p class="mut" style="margin-top:8px;font-size:.84rem">Gratuit. Vous ne payez qu’après confirmation du propriétaire.</p>';
+}
+function vDetail(id){
+  var l=listing(id),u=me();
+  if(!l||l.deleted)return notFound('Cette annonce n’existe plus.');
+  var allowed=isPublic(l)||(u&&(u.role==='admin'||u.id===l.ownerId||unlocked(u.id,l.id)||lastRequest(u.id,l.id)));
+  if(!allowed)return notFound('Cette annonce n’est plus disponible.');
+  var main=l.photos&&l.photos.length?'<img id="gm" src="'+l.photos[0]+'" alt="'+esc(l.titre)+'">':'🏠';
+  var h=hue(l.id), bg=l.photos&&l.photos.length?'':' style="background:linear-gradient(135deg,hsl('+h+',55%,45%),hsl('+((h+50)%360)+',60%,60%))"';
+  var th=l.photos&&l.photos.length>1?'<div class="thumbs">'+l.photos.map(function(p){return '<img src="'+p+'" alt="" onclick="A.gal(this)">'}).join('')+'</div>':'';
+  var stat=l.statut!=='active'||l.valide!=='ok'?'<p style="margin-bottom:8px"><span class="st '+(l.valide!=='ok'?l.valide:l.statut)+'">'+(l.valide!=='ok'?vLabel(l.valide):stLabel(l.statut))+'</span></p>':'';
+  return '<section><div class="wrap"><p class="mut" style="margin-bottom:10px"><a href="#/chambres">← Retour aux chambres</a></p><div class="two"><div><div class="gal"><div class="main"'+bg+'>'+main+'</div>'+th+'</div>'+
+  '<div class="panel" style="margin-top:18px">'+stat+'<h1 style="font-size:1.5rem">'+esc(l.titre)+'</h1><p class="loc" style="margin:6px 0">📍 '+esc(l.quartier)+', '+esc(l.ville)+'</p><p class="mut">Localisation approximative : '+esc(l.repere)+'</p>'+
+  '<div class="row2" style="margin:16px 0"><div><div class="mut">Loyer mensuel</div><div class="price" style="font-size:1.4rem">'+fmt(l.prix)+'</div></div><div><div class="mut">Caution</div><div class="price" style="font-size:1.4rem">'+fmt(l.caution)+'</div></div></div>'+
+  '<p><b>Nombre de chambres :</b> '+esc(l.nb)+(l.dispo?' &nbsp;•&nbsp; <b>Disponible à partir du :</b> '+esc(l.dispo):'')+'</p><h3 style="margin:14px 0 6px">Description</h3><p>'+esc(l.desc).replace(/\n/g,'<br>')+'</p><h3 style="margin:14px 0 6px">Équipements</h3><div class="tags">'+tags(l)+'</div></div></div>'+
+  '<aside class="panel" style="position:sticky;top:90px"><h3 style="margin-bottom:4px">Coordonnées du propriétaire</h3><p class="mut" style="margin-bottom:6px">Numéro, adresse exacte et GPS.</p>'+actionPanel(l)+'<p class="mut" style="margin-top:14px;font-size:.8rem">ℹ️ BÉNIN IMMO met seulement en relation et n’est pas une agence immobilière. Le paiement est un frais de service du site, pas une avance de loyer. <a href="#/conditions">Conditions</a></p></aside></div></div></section>';
+}
+function notFound(m){return '<section><div class="wrap"><div class="empty"><div class="e">🚫</div><h2>'+esc(m)+'</h2><p style="margin-top:14px"><a class="btn" href="#/chambres">Trouver une chambre</a></p></div></div></section>'}
+
+function vTerms(){
+  return '<section><div class="wrap prose" style="max-width:820px"><h2 class="t">Conditions d’utilisation</h2><p class="sub">Dernière mise à jour : 2 novembre 2026</p><div class="panel">'+
+  '<h3>1. Le rôle de BÉNIN IMMO</h3><p>BÉNIN IMMO est une plateforme de <b>mise en relation</b> entre des propriétaires de chambres à louer et des démarcheurs ou locataires. BÉNIN IMMO <b>n’est pas une agence immobilière</b> : le site ne loue pas, ne représente aucune des parties, ne fixe pas les loyers, ne rédige ni ne signe aucun contrat de location et ne perçoit ni loyer, ni caution, ni avance.</p>'+
+  '<h3>2. Nature du paiement</h3><p>Les sommes payées sur le site (achat individuel, packs, abonnement Premium) sont des <b>frais de service</b> versés à BÉNIN IMMO pour obtenir les informations complémentaires du propriétaire : numéro de téléphone, adresse exacte, position GPS et lien Google Maps. <b>Ce paiement n’est pas une avance sur loyer, ni une caution, ni une commission de location.</b> Toute somme liée au logement se règle uniquement entre le locataire et le propriétaire.</p>'+
+  '<h3>3. Disponibilité</h3><p>Avant tout paiement, le démarcheur demande au propriétaire si la chambre est toujours disponible. La réponse vient du propriétaire et vaut au moment où elle est donnée ; la confirmation reste valable 24 heures pour débloquer les coordonnées.</p>'+
+  '<h3>4. Aucune garantie après le déblocage</h3><p>Une fois les coordonnées débloquées, BÉNIN IMMO ne garantit rien de ce qui se passe ensuite : état ou conformité du logement, identité ou sérieux du propriétaire, montant réel du loyer ou de la caution, conditions de la location, issue de la visite. <b>La suite ne concerne que le locataire (ou le démarcheur) et le propriétaire</b> ; BÉNIN IMMO se limite à les mettre en contact.</p>'+
+  '<h3>5. Vos précautions avant de payer une avance</h3><ul><li>Visitez le logement avant de verser quoi que ce soit.</li><li>Vérifiez que la personne rencontrée est bien le propriétaire ou son représentant autorisé.</li><li>Contrôlez l’état du logement, le loyer, la caution et les conditions annoncées.</li><li>Demandez un contrat écrit et un reçu pour chaque somme versée.</li><li>Ne versez jamais d’argent à distance à quelqu’un que vous n’avez pas rencontré.</li></ul>'+
+  '<h3>6. Obligations des propriétaires</h3><p>Le propriétaire s’engage à publier des informations exactes, à ne proposer que des logements qu’il a le droit de louer et à répondre aux demandes de disponibilité. Une annonce peut être mise en veille ou désactivée automatiquement, ou retirée par l’administration en cas de manquement.</p>'+
+  '<h3>7. Comptes</h3><p>BÉNIN IMMO peut suspendre ou supprimer un compte en cas d’abus, de fausses informations ou de comportement frauduleux.</p>'+
+  '</div><p style="margin-top:16px"><a class="btn o" href="#/">← Retour à l’accueil</a></p></div></section>';
+}
+function vAuth(mode){
+  var reg=mode==='reg';
+  var demo=reg?'':'<div class="demo"><b>Comptes de démonstration</b><br><span class="mut">Cliquez pour remplir automatiquement :</span><br><button class="btn s o" type="button" onclick="A.fill(\'awa@demo.bj\')">Démarcheur</button><button class="btn s o" type="button" onclick="A.fill(\'marie@demo.bj\')">Propriétaire</button><button class="btn s o" type="button" onclick="A.fill(\'admin@beninimmo.bj\',\'admin123\')">Administrateur</button></div>';
+  return '<div class="wrap"><div class="center panel"><h2 class="t">'+(reg?'Créer un compte':'Connexion')+'</h2><p class="sub">'+(reg?'Rejoignez BÉNIN IMMO en quelques secondes.':'Heureux de vous revoir.')+'</p><form onsubmit="return A.'+(reg?'register':'login')+'(event)">'+
+  (reg?'<div class="fld"><label>Nom complet *</label><input id="a_nom" required></div><div class="fld"><label>Téléphone (WhatsApp) *</label><input id="a_tel" type="tel" required placeholder="Ex : 0197000000"></div><div class="fld"><label>E-mail (optionnel)</label><input id="a_email" type="email"></div><div class="fld"><label>Je suis *</label><select id="a_role"><option value="demarcheur">Démarcheur / Locataire</option><option value="proprio">Propriétaire</option></select></div><label class="chk" style="align-items:flex-start"><input type="checkbox" id="a_cgu" required style="margin-top:4px"><span>J’ai lu et j’accepte les <a href="#/conditions" data-modal="1">conditions d’utilisation</a> : BÉNIN IMMO met en relation et n’est pas une agence immobilière.</span></label>':'<div class="fld"><label>E-mail ou téléphone</label><input id="a_id" required autocomplete="username"></div>')+
+  '<div class="fld"><label>Mot de passe'+(reg?' (6 caractères minimum)':'')+'</label><input id="a_mdp" type="password" required '+(reg?'minlength="6"':'')+' autocomplete="'+(reg?'new':'current')+'-password"></div><button class="btn w" type="submit">'+(reg?'Créer mon compte':'Se connecter')+'</button></form><p class="mut" style="margin-top:14px;text-align:center">'+(reg?'Déjà inscrit ? <a href="#/connexion">Connexion</a>':'Pas encore de compte ? <a href="#/inscription">Inscription</a>')+'</p>'+demo+'</div></div>';
+}
+
+function vPay(id){
+  var u=me(),l=listing(id);
+  if(!l||l.deleted)return notFound('Annonce introuvable.');
+  if(u.role!=='demarcheur')return notFound('Seuls les démarcheurs peuvent acheter des coordonnées.');
+  if(unlocked(u.id,l.id)){go('/annonce/'+l.id);return ''}
+  if(!confirmedOk(u.id,l.id)||!isPublic(l)){return '<div class="wrap"><div class="center panel"><h2 class="t">Disponibilité à confirmer</h2><p>Pour payer, le propriétaire doit avoir répondu OUI il y a moins de 24 h.</p><p style="margin-top:14px"><a class="btn" href="#/annonce/'+l.id+'">Retour à l’annonce</a></p></div></div>'}
+  var credit=u.credits>0;
+  var mm=METHODS.map(function(m,i){return '<label class="opt"><input type="radio" name="pm" value="'+m[0]+'"'+(i===0?' checked':'')+'> '+m[1]+'</label>'}).join('');
+  var offers=credit?'':'<div class="pay"><label class="opt"><input type="radio" name="of" value="one" checked> Cette coordonnée <span class="p">'+fmt(PRICE_ONE)+'</span></label><label class="opt"><input type="radio" name="of" value="5"> Pack 5 coordonnées <span class="p">'+fmt(PACKS[5])+'</span></label><label class="opt"><input type="radio" name="of" value="10"> Pack 10 coordonnées <span class="p">'+fmt(PACKS[10])+'</span></label><label class="opt dis"><input type="radio" disabled> Premium 30 jours illimité <span class="p">Bientôt</span></label></div>';
+  return '<div class="wrap"><div class="center panel" style="max-width:560px"><h2 class="t">Débloquer les coordonnées</h2><p class="sub">'+esc(l.titre)+' — '+esc(l.quartier)+', '+esc(l.ville)+'</p>'+
+  '<div class="note" style="background:#fff8e1;border-color:#f0d27a">💡 <b>Ce paiement est un frais de service payé à BÉNIN IMMO</b> pour obtenir les informations complémentaires du propriétaire (téléphone, adresse exacte, GPS). <b>Ce n’est pas une avance de loyer</b> : toute somme pour le logement se règle uniquement avec le propriétaire, après vérification.</div>'+
+  '<label class="chk" style="align-items:flex-start;margin:12px 0"><input type="checkbox" id="ack" style="margin-top:4px"><span>J’ai compris que BÉNIN IMMO n’est pas une agence immobilière : le site me met seulement en contact avec le propriétaire et ne garantit rien après le déblocage. Je vérifierai tout avant de verser une avance. <a href="#/conditions" data-modal="1">Conditions</a></span></label>'+
+  (credit?'<div class="note" style="background:#e8f7ee;border-color:#8fd2ae">Vous avez <b>'+u.credits+'</b> crédit'+(u.credits>1?'s':'')+' de coordonnées. Un crédit sera utilisé.</div><button class="btn y w" onclick="A.useCredit(\''+l.id+'\')">🔓 Utiliser 1 crédit</button>':
+  '<form onsubmit="return A.pay(event,\''+l.id+'\')"><h3 style="margin-bottom:8px">1. Choisissez votre offre</h3>'+offers+'<h3 style="margin:18px 0 8px">2. Moyen de paiement</h3><div class="pay">'+mm+'</div><div class="fld" style="margin-top:12px"><label>Numéro de paiement</label><input id="pp" type="tel" required value="'+esc(u.tel)+'"></div><button id="pb" class="btn y w" type="submit">🔒 Payer et débloquer</button></form><div class="note warn" style="margin-top:14px">Mode démonstration : le paiement est simulé. La connexion à CinetPay, PayDunya ou FeexPay se fait à la mise en production.</div>')+'</div></div>';
+}
+
+function vPurchases(){
+  var u=me();
+  var mine=db.unlocks.filter(function(k){return k.userId===u.id}).sort(function(a,b){return b.date-a.date});
+  var pays=db.payments.filter(function(p){return p.userId===u.id}).sort(function(a,b){return b.date-a.date});
+  var items=mine.map(function(k){var l=listing(k.listingId);if(!l)return '';return '<div class="panel" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><b>'+esc(l.titre)+'</b><div class="mut">'+esc(l.quartier)+', '+esc(l.ville)+' • débloquée le '+dt(k.date)+'</div></div><a class="btn s o" href="#/annonce/'+l.id+'">Voir l’annonce</a></div>'+coordsBox(l,1)+'</div>'}).join('');
+  var rows=pays.map(function(p){return '<tr><td>'+dt(p.date)+'</td><td>'+esc(p.libelle)+'</td><td>'+esc(p.methode)+'</td><td>'+fmt(p.montant)+'</td><td><span class="st ok">'+esc(p.statut)+'</span></td></tr>'}).join('');
+  return '<section><div class="wrap"><h2 class="t">Mes coordonnées achetées</h2><p class="sub">Crédits restants : <b>'+u.credits+'</b></p>'+(items||'<div class="empty"><div class="e">🔒</div>Vous n’avez encore débloqué aucune coordonnée.<p style="margin-top:12px"><a class="btn" href="#/chambres">Chercher une chambre</a></p></div>')+
+  (rows?'<h3 style="margin:26px 0 10px">Historique des paiements</h3><div class="panel tw"><table><tr><th>Date</th><th>Achat</th><th>Moyen</th><th>Montant</th><th>Statut</th></tr>'+rows+'</table></div>':'')+'</div></section>';
+}
+
+function vForm(id){
+  var u=me(),l=id?listing(id):null;
+  if(l&&l.ownerId!==u.id&&u.role!=='admin')return notFound('Vous ne pouvez pas modifier cette annonce.');
+  var v=l||{titre:'',ville:'',quartier:'',repere:'',adresse:'',lat:'',lng:'',prix:'',caution:'',nb:1,equip:[],desc:'',tel:u.tel,dispo:'',photos:[]};
+  formPhotos=(v.photos||[]).slice();
+  var eq=Object.keys(EQUIP).map(function(k){return '<label class="chk"><input type="checkbox" name="feq" value="'+k+'"'+(v.equip.indexOf(k)>=0?' checked':'')+'> '+EQUIP[k]+'</label>'}).join('');
+  return '<section><div class="wrap" style="max-width:820px"><h2 class="t">'+(l?'Modifier l’annonce':'Publier une annonce')+'</h2><p class="sub">Gratuit. Les informations d’adresse, GPS et téléphone restent cachées jusqu’au paiement.</p><form class="panel" onsubmit="return A.saveListing(event,\''+(l?l.id:'')+'\')">'+
+  '<div class="fld"><label>Titre *</label><input id="f_titre" required maxlength="80" value="'+esc(v.titre)+'" placeholder="Ex : Chambre salon moderne à Agla"></div>'+
+  '<div class="row2"><div class="fld"><label>Commune * (tapez les premières lettres)</label>'+combo('f_ville',v.ville,'Ex : Cot…',true)+'</div><div class="fld"><label>Quartier *</label><input id="f_quartier" required value="'+esc(v.quartier)+'"></div></div>'+
+  '<div class="fld"><label>Localisation approximative (visible par tous) *</label><input id="f_repere" required value="'+esc(v.repere)+'" placeholder="Ex : Environ 300 mètres du Carrefour IITA"></div>'+
+  '<div class="fld"><label>Adresse exacte (cachée) *</label><input id="f_adresse" required value="'+esc(v.adresse)+'" placeholder="Ex : Maison N°145, Rue des Palmiers"></div>'+
+  '<div class="row2"><div class="fld"><label>Latitude GPS (cachée) *</label><input id="f_lat" type="number" step="any" required value="'+esc(v.lat)+'"></div><div class="fld"><label>Longitude GPS (cachée) *</label><input id="f_lng" type="number" step="any" required value="'+esc(v.lng)+'"></div></div>'+
+  '<p style="margin:-4px 0 12px"><button class="btn s o" type="button" onclick="A.geo()">📍 Utiliser ma position actuelle</button></p>'+
+  '<div class="row2"><div class="fld"><label>Loyer mensuel (FCFA) *</label><input id="f_prix" type="number" min="0" required value="'+esc(v.prix)+'"></div><div class="fld"><label>Caution (FCFA) *</label><input id="f_caution" type="number" min="0" required value="'+esc(v.caution)+'"></div></div>'+
+  '<div class="row2"><div class="fld"><label>Nombre de chambres *</label><input id="f_nb" type="number" min="1" required value="'+esc(v.nb)+'"></div><div class="fld"><label>Disponible à partir du (vide = tout de suite)</label><input id="f_dispo" type="date" value="'+esc(v.dispo)+'"></div></div>'+
+  '<div class="fld"><label>Téléphone du propriétaire (WhatsApp) *</label><input id="f_tel" type="tel" required value="'+esc(v.tel)+'"></div>'+
+  '<div class="fld"><label>Équipements</label>'+eq+'</div><div class="fld"><label>Description *</label><textarea id="f_desc" required>'+esc(v.desc)+'</textarea></div>'+
+  '<div class="fld"><label>Photos (4 maximum)</label><input type="file" accept="image/*" multiple onchange="A.photos(this)"><div id="pv" class="thumbs">'+photoPrev()+'</div></div>'+
+  '<button class="btn w" type="submit">'+(l?'Enregistrer les modifications':'Publier mon annonce')+'</button></form></div></section>';
+}
+function photoPrev(){return formPhotos.map(function(p,i){return '<span style="position:relative"><img src="'+p+'" alt=""><button type="button" onclick="A.delPhoto('+i+')" style="position:absolute;top:-6px;right:-6px;background:var(--r);color:#fff;border:0;border-radius:50%;width:20px;height:20px;cursor:pointer">×</button></span>'}).join('')}
+
+function vMine(){
+  var u=me();
+  var mine=db.listings.filter(function(l){return l.ownerId===u.id&&!l.deleted}).sort(function(a,b){return b.date-a.date});
+  var pend=db.requests.filter(function(r){var l=listing(r.listingId);return r.reponse==='pending'&&l&&l.ownerId===u.id}).sort(function(a,b){return a.date-b.date});
+  var req=pend.map(function(r){var l=listing(r.listingId);return '<div class="panel" style="margin-bottom:10px;border-left:5px solid var(--y)"><p>🔔 <b>Un utilisateur souhaite savoir si votre chambre est toujours disponible.</b></p><p class="mut">« '+esc(l.titre)+' » — demande du '+dt(r.date)+' (expire le '+dt(r.date+H24)+')</p><p style="margin:8px 0 4px">Veuillez répondre :</p><button class="btn s" onclick="A.respond(\''+r.id+'\',\'oui\')">✅ OUI</button> <button class="btn s r" onclick="A.respond(\''+r.id+'\',\'non\')">❌ NON</button></div>'}).join('');
+  var cards=mine.map(function(l){
+    var nreq=db.requests.filter(function(r){return r.listingId===l.id}).length, nbuy=db.unlocks.filter(function(k){return k.listingId===l.id}).length;
+    var react=l.statut!=='active'?'<button class="btn s y" onclick="A.reactivate(\''+l.id+'\')">✅ '+(l.statut==='veille'?'Réactiver l’annonce':'Réactiver mon annonce')+'</button> ':'';
+    return '<div class="panel" style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><div><b>'+esc(l.titre)+'</b><div class="mut">'+esc(l.quartier)+', '+esc(l.ville)+' • '+fmt(l.prix)+'</div><div class="pillrow"><span class="st '+l.statut+'">'+stLabel(l.statut)+'</span><span class="st '+l.valide+'">'+vLabel(l.valide)+'</span></div></div><div class="mut" style="text-align:right">'+nreq+' demande(s)<br>'+nbuy+' achat(s)</div></div>'+
+    (l.statut==='veille'?'<div class="note warn">Votre annonce a été mise en veille car vous avez indiqué que le logement n’est plus disponible.</div>':'')+
+    (l.statut==='inactive'?'<div class="note warn">Annonce désactivée suite à plusieurs demandes restées sans réponse. Confirmez que le logement est toujours disponible pour la réactiver.</div>':'')+
+    '<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">'+react+'<a class="btn s o" href="#/annonce/'+l.id+'">Voir</a><a class="btn s o" href="#/publier/'+l.id+'">Modifier</a><button class="btn s r" onclick="A.delListing(\''+l.id+'\')">Supprimer</button></div></div>';
+  }).join('');
+  return '<section><div class="wrap"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><h2 class="t">Mes annonces</h2><a class="btn" href="#/publier">+ Publier une annonce</a></div>'+
+  '<h3 style="margin:18px 0 10px">Demandes de disponibilité en attente ('+pend.length+')</h3>'+(req||'<div class="note">Aucune demande en attente. Vous serez notifié ici et sur WhatsApp à chaque nouvelle demande.</div>')+
+  '<h3 style="margin:22px 0 10px">Mes logements</h3>'+(cards||'<div class="empty"><div class="e">🏠</div>Vous n’avez pas encore publié d’annonce.</div>')+'</div></section>';
+}
+
+function vProfile(){
+  var u=me();
+  var ns=db.notifs.filter(function(n){return n.userId===u.id}).sort(function(a,b){return b.date-a.date});
+  var html='<section><div class="wrap" style="max-width:820px"><h2 class="t">Mon profil</h2><p class="sub">Rôle : '+({demarcheur:'Démarcheur / Locataire',proprio:'Propriétaire',admin:'Administrateur'}[u.role])+(u.role==='demarcheur'?' • Crédits : <b>'+u.credits+'</b>':'')+'</p>'+
+  '<form class="panel" onsubmit="return A.saveProfile(event)"><div class="fld"><label>Nom complet</label><input id="p_nom" required value="'+esc(u.nom)+'"></div><div class="row2"><div class="fld"><label>Téléphone</label><input id="p_tel" required value="'+esc(u.tel)+'"></div><div class="fld"><label>E-mail</label><input id="p_email" type="email" value="'+esc(u.email)+'"></div></div><div class="fld"><label>Nouveau mot de passe (laisser vide pour ne pas changer)</label><input id="p_mdp" type="password" minlength="6"></div><button class="btn" type="submit">Enregistrer</button></form>'+
+  '<h3 style="margin:26px 0 10px">Notifications ('+ns.length+')</h3>'+(ns.length?ns.map(function(n){return '<div class="nt '+(n.type==='warn'?'warn':'')+(n.read?'':' unread')+'"><b>'+esc(n.title)+'</b><div>'+esc(n.text)+'</div><div class="mut">'+dt(n.date)+'</div></div>'}).join(''):'<div class="note">Aucune notification.</div>')+'</div></section>';
+  ns.forEach(function(n){n.read=true});save();
+  return html;
+}
+
+function vAdmin(){
+  var T=[['stats','Statistiques'],['users','Utilisateurs'],['listings','Annonces'],['pays','Paiements'],['tools','Outils démo']];
+  var tabs='<div class="tabs">'+T.map(function(t){return '<button class="'+(adminTab===t[0]?'on':'')+'" onclick="A.tab(\''+t[0]+'\')">'+t[1]+(t[0]==='listings'?pendBadge():'')+'</button>'}).join('')+'</div>';
+  var body='';
+  if(adminTab==='stats'){
+    var n=new Date(nowT()),P=db.payments.filter(function(p){return p.montant>0});
+    var sum=function(f){return P.filter(function(p){return f(new Date(p.date))}).reduce(function(s,p){return s+p.montant},0)};
+    var day=sum(function(d){return d.toDateString()===n.toDateString()}),mon=sum(function(d){return d.getMonth()===n.getMonth()&&d.getFullYear()===n.getFullYear()}),yr=sum(function(d){return d.getFullYear()===n.getFullYear()});
+    var last='';for(var i=6;i>=0;i--){var dd=new Date(nowT()-i*86400000);var s=sum(function(d){return d.toDateString()===dd.toDateString()});last+='<tr><td>'+dd.toLocaleDateString('fr-FR')+'</td><td>'+fmt(s)+'</td></tr>'}
+    body='<div class="kpis"><div class="kpi"><span class="mut">Revenus du jour</span><b>'+fmt(day)+'</b></div><div class="kpi"><span class="mut">Revenus du mois</span><b>'+fmt(mon)+'</b></div><div class="kpi"><span class="mut">Revenus de l’année</span><b>'+fmt(yr)+'</b></div><div class="kpi"><span class="mut">Utilisateurs</span><b>'+db.users.length+'</b></div><div class="kpi"><span class="mut">Annonces actives</span><b>'+db.listings.filter(isPublic).length+'</b></div><div class="kpi"><span class="mut">Coordonnées débloquées</span><b>'+db.unlocks.length+'</b></div></div><div class="panel tw"><h3 style="margin-bottom:8px">Revenus des 7 derniers jours</h3><table><tr><th>Jour</th><th>Revenus</th></tr>'+last+'</table></div>';
+  }
+  if(adminTab==='users'){
+    body='<div class="panel tw"><table><tr><th>Nom</th><th>Contact</th><th>Rôle</th><th>Inscrit le</th><th>État</th><th></th></tr>'+db.users.map(function(u){return '<tr><td>'+esc(u.nom)+'</td><td>'+esc(u.tel)+'<br><span class="mut">'+esc(u.email)+'</span></td><td>'+u.role+'</td><td>'+dt(u.date)+'</td><td>'+(u.suspendu?'<span class="st inactive">Suspendu</span>':'<span class="st active">Actif</span>')+'</td><td>'+(u.role==='admin'?'':(u.suspendu?'<button class="btn s o" onclick="A.admUser(\''+u.id+'\',\'react\')">Réactiver</button> ':'<button class="btn s o" onclick="A.admUser(\''+u.id+'\',\'susp\')">Suspendre</button> ')+'<button class="btn s r" onclick="A.admUser(\''+u.id+'\',\'del\')">Supprimer</button>')+'</td></tr>'}).join('')+'</table></div>';
+  }
+  if(adminTab==='listings'){
+    body='<div class="panel tw"><table><tr><th>Annonce</th><th>Propriétaire</th><th>Prix</th><th>Statut</th><th>Validation</th><th></th></tr>'+db.listings.filter(function(l){return !l.deleted}).sort(function(a,b){return (a.valide==='pending'?0:1)-(b.valide==='pending'?0:1)||b.date-a.date}).map(function(l){var o=user(l.ownerId);return '<tr><td><a href="#/annonce/'+l.id+'">'+esc(l.titre)+'</a><br><span class="mut">'+esc(l.quartier)+', '+esc(l.ville)+'</span></td><td>'+esc(o?o.nom:'—')+'</td><td>'+fmt(l.prix)+'</td><td><span class="st '+l.statut+'">'+stLabel(l.statut)+'</span></td><td><span class="st '+l.valide+'">'+vLabel(l.valide)+'</span></td><td>'+(l.valide!=='ok'?'<button class="btn s" onclick="A.admList(\''+l.id+'\',\'ok\')">Valider</button> ':'')+(l.valide==='pending'?'<button class="btn s o" onclick="A.admList(\''+l.id+'\',\'refuse\')">Refuser</button> ':'')+(l.statut!=='active'?'<button class="btn s y" onclick="A.admList(\''+l.id+'\',\'react\')">Réactiver</button> ':'')+'<button class="btn s r" onclick="A.admList(\''+l.id+'\',\'del\')">Supprimer</button></td></tr>'}).join('')+'</table></div>';
+  }
+  if(adminTab==='pays'){
+    var ps=db.payments.slice().sort(function(a,b){return b.date-a.date});
+    body='<div class="panel tw">'+(ps.length?'<table><tr><th>Date</th><th>Utilisateur</th><th>Achat</th><th>Moyen</th><th>Montant</th><th>Statut</th></tr>'+ps.map(function(p){var u=user(p.userId);return '<tr><td>'+dt(p.date)+'</td><td>'+esc(u?u.nom:'—')+'</td><td>'+esc(p.libelle)+'</td><td>'+esc(p.methode)+'</td><td>'+fmt(p.montant)+'</td><td>'+esc(p.statut)+'</td></tr>'}).join('')+'</table>':'<div class="empty">Aucun paiement pour le moment.</div>')+'</div>';
+  }
+  if(adminTab==='tools'){
+    body='<div class="panel"><h3>Outils de démonstration</h3><p class="mut" style="margin:8px 0">Date simulée : <b>'+dt(nowT())+'</b></p><p>Les demandes expirent après 24 h. Avancez le temps pour tester la règle « 3 demandes ignorées = annonce inactive ».</p><p style="margin-top:10px"><button class="btn" onclick="A.skip()">⏩ Avancer de 24 h</button> <button class="btn r" onclick="A.reset()">Réinitialiser toutes les données</button></p></div>';
+  }
+  return '<section><div class="wrap"><h2 class="t">Administration</h2><p class="sub">Gestion de la plateforme BÉNIN IMMO.</p>'+tabs+body+'</div></section>';
+}
+function pendBadge(){var n=db.listings.filter(function(l){return !l.deleted&&l.valide==='pending'}).length;return n?'<span class="badge">'+n+'</span>':''}
+
+/* ---------- navigation / rendu ---------- */
+function renderNav(h){
+  var u=me(),ln=function(p,t,x){return '<a href="#'+p+'" class="'+(h.indexOf(p)===0&&(p!=='/'||h==='/')?'on':'')+'" onclick="A.closeMenu()">'+t+(x||'')+'</a>'};
+  var s=ln('/','Accueil')+ln('/chambres','Trouver une chambre');
+  if(u){
+    if(u.role==='demarcheur')s+=ln('/achats','Mes coordonnées');
+    if(u.role==='proprio')s+=ln('/mes-annonces','Mes annonces')+ln('/publier','Publier');
+    if(u.role==='admin')s+=ln('/admin','Administration',pendBadge());
+    var un=db.notifs.filter(function(n){return n.userId===u.id&&!n.read}).length;
+    s+=ln('/profil','👤 '+esc(u.nom.split(' ')[0]),un?'<span class="badge">'+un+'</span>':'')+'<button class="lnk" onclick="A.logout()">Déconnexion</button>';
+  }else{
+    s+=ln('/publier','Publier une annonce')+ln('/connexion','Connexion')+'<a class="btn s" href="#/inscription" onclick="A.closeMenu()">Inscription</a>';
+  }
+  document.getElementById('nav').innerHTML=s;
+}
+function render(scroll){
+  sweep();
+  var h=cur,p=h.split('/').filter(Boolean),r=p[0]||'',u=me(),html='';
+  function need(roles){
+    if(!u){nextAfterLogin=h;toast('Connectez-vous pour continuer.');go('/connexion');return false}
+    if(roles&&roles.indexOf(u.role)<0){html=notFound('Accès réservé.');return false}
+    return true;
+  }
+  if(r==='')html=vHome();
+  else if(r==='chambres')html=vList();
+  else if(r==='annonce')html=vDetail(p[1]);
+  else if(r==='conditions')html=vTerms();
+  else if(r==='inscription')html=vAuth('reg');
+  else if(r==='connexion')html=vAuth('log');
+  else if(r==='paiement'){if(need(['demarcheur']))html=vPay(p[1])}
+  else if(r==='achats'){if(need(['demarcheur']))html=vPurchases()}
+  else if(r==='publier'){
+    if(!u){nextAfterLogin=h;toast('Connectez-vous ou créez un compte propriétaire pour publier.');go('/connexion');return}
+    if(u.role==='demarcheur')html=notFound('Seuls les propriétaires peuvent publier. Créez un compte propriétaire.');
+    else html=vForm(p[1]);
+  }
+  else if(r==='mes-annonces'){if(need(['proprio']))html=vMine()}
+  else if(r==='profil'){if(need())html=vProfile()}
+  else if(r==='admin'){if(need(['admin']))html=vAdmin()}
+  else html=notFound('Page introuvable.');
+  document.getElementById('app').innerHTML=html;
+  renderNav(h);
+  if(scroll!==false)window.scrollTo(0,0);
+}
+
+/* ---------- actions ---------- */
+var A=window.A={
+  menu:function(){document.getElementById('nav').classList.toggle('open')},
+  closeMenu:function(){document.getElementById('nav').classList.remove('open')},
+  gal:function(img){var m=document.getElementById('gm');if(m)m.src=img.src},
+  quick:function(e){e.preventDefault();F={ville:v('qv'),quartier:v('qq').trim(),min:'',max:v('qm'),eq:v('qe')?[v('qe')]:[]};go('/chambres');return false},
+  filter:function(e){e.preventDefault();F={ville:v('fv'),quartier:v('fq').trim(),min:v('fmin'),max:v('fmax'),eq:Array.prototype.map.call(document.querySelectorAll('input[name=eq]:checked'),function(x){return x.value})};render(false);return false},
+  resetFilter:function(){F={ville:'',quartier:'',min:'',max:'',eq:[]};render(false)},
+  needLogin:function(back){nextAfterLogin=back;go('/connexion')},
+  fill:function(id,pw){document.getElementById('a_id').value=id;document.getElementById('a_mdp').value=pw||'demo123'},
+  register:function(e){
+    e.preventDefault();
+    var nom=v('a_nom').trim(),tel=v('a_tel').trim(),email=v('a_email').trim().toLowerCase(),mdp=v('a_mdp'),role=v('a_role');
+    if(normTel(tel).length<8){toast('Numéro de téléphone invalide.','err');return false}
+    if(db.users.some(function(x){return normTel(x.tel)===normTel(tel)||(email&&x.email===email)})){toast('Un compte existe déjà avec ce téléphone ou cet e-mail.','err');return false}
+    var u={id:nid('u'),nom:nom,tel:tel,email:email,mdp:mdp,role:role,date:nowT(),credits:0,suspendu:false};
+    db.users.push(u);db.session=u.id;save();toast('Bienvenue sur BÉNIN IMMO !','ok');
+    var n=nextAfterLogin;nextAfterLogin=null;go(n||(role==='proprio'?'/publier':'/chambres'));return false;
+  },
+  login:function(e){
+    e.preventDefault();
+    var id=v('a_id').trim().toLowerCase(),pw=v('a_mdp');
+    var u=db.users.find(function(x){return (x.email&&x.email===id)||normTel(x.tel)===normTel(id)&&normTel(id).length>=8});
+    if(!u||u.mdp!==pw){toast('Identifiants incorrects.','err');return false}
+    if(u.suspendu){toast('Ce compte est suspendu. Contactez l’administration.','err');return false}
+    db.session=u.id;save();toast('Connexion réussie.','ok');
+    var n=nextAfterLogin;nextAfterLogin=null;go(n||(u.role==='admin'?'/admin':u.role==='proprio'?'/mes-annonces':'/chambres'));return false;
+  },
+  logout:function(){db.session=null;save();A.closeMenu();go('/');render()},
+  verify:function(id){
+    var u=me(),l=listing(id);
+    if(!u||u.role!=='demarcheur'){toast('Seuls les démarcheurs peuvent vérifier la disponibilité.','err');return}
+    if(!l||!isPublic(l)){toast('Cette annonce n’accepte plus de demandes.','err');render(false);return}
+    var r=lastRequest(u.id,id);
+    if(r&&r.reponse==='pending'){toast('Une demande est déjà en cours.');return}
+    db.requests.push({id:nid('r'),listingId:id,userId:u.id,date:nowT(),reponse:'pending',dateRep:null});
+    notify(l.ownerId,'Nouvelle demande de disponibilité','Un utilisateur souhaite savoir si votre chambre « '+l.titre+' » est toujours disponible. Répondez OUI ou NON depuis « Mes annonces ». (Notification également envoyée par WhatsApp.)');
+    save();toast('Demande envoyée au propriétaire.','ok');render(false);
+  },
+  respond:function(rid,rep){
+    var r=db.requests.find(function(x){return x.id===rid}),u=me();
+    if(!r||r.reponse!=='pending'){toast('Cette demande n’est plus active.','err');render(false);return}
+    var l=listing(r.listingId);if(!l||l.ownerId!==u.id)return;
+    r.reponse=rep;r.dateRep=nowT();
+    if(rep==='oui'){notify(r.userId,'Chambre disponible','La chambre « '+l.titre+' » est disponible. Vous pouvez débloquer les coordonnées pendant 24 h.');toast('Réponse envoyée : OUI','ok')}
+    else{l.statut='veille';notify(r.userId,'Chambre indisponible','Le propriétaire a indiqué que « '+l.titre+' » n’est plus disponible.');notify(l.ownerId,'Annonce mise en veille','Votre annonce a été mise en veille car vous avez indiqué que le logement n’est plus disponible.','warn');toast('Annonce mise en veille.')}
+    save();render(false);
+  },
+  reactivate:function(id){
+    var l=listing(id),u=me();if(!l||(l.ownerId!==u.id&&u.role!=='admin'))return;
+    l.statut='active';l.reactAt=nowT();notify(l.ownerId,'Annonce réactivée','Votre annonce « '+l.titre+' » est de nouveau visible.');save();toast('Annonce réactivée.','ok');render(false);
+  },
+  delListing:function(id){var l=listing(id);if(!l||!confirm('Supprimer définitivement cette annonce ?'))return;l.deleted=true;save();toast('Annonce supprimée.');render(false)},
+  pay:function(e,id){
+    if(!ack()){e.preventDefault();toast('Cochez la case de compréhension avant de payer.','err');return false}
+    e.preventDefault();
+    var u=me(),l=listing(id);
+    if(!confirmedOk(u.id,id)||!isPublic(l)){toast('La confirmation a expiré. Vérifiez à nouveau la disponibilité.','err');go('/annonce/'+id);return false}
+    var of=document.querySelector('input[name=of]:checked').value,pm=document.querySelector('input[name=pm]:checked').value;
+    var mname=METHODS.filter(function(m){return m[0]===pm})[0][1];
+    var montant=of==='one'?PRICE_ONE:PACKS[of],lib=of==='one'?'Coordonnées – '+l.titre:'Pack '+of+' coordonnées';
+    var b=document.getElementById('pb');b.disabled=true;b.textContent='Validation du paiement…';
+    setTimeout(function(){
+      db.payments.push({id:nid('p'),userId:u.id,listingId:id,montant:montant,date:nowT(),statut:'Validé',methode:mname,libelle:lib});
+      if(of!=='one')u.credits+=Number(of)-1;
+      doUnlock(u,l,'paiement');save();
+      notify(u.id,'Paiement validé','Paiement de '+fmt(montant)+' validé. Coordonnées de « '+l.titre+' » débloquées.');
+      toast('Paiement validé. Coordonnées débloquées !','ok');go('/annonce/'+id);
+    },1300);
+    return false;
+  },
+  useCredit:function(id){
+    if(!ack()){toast('Cochez la case de compréhension avant de débloquer.','err');return}
+    var u=me(),l=listing(id);
+    if(!confirmedOk(u.id,id)||!isPublic(l)||u.credits<1){toast('Impossible de débloquer : vérifiez la disponibilité.','err');go('/annonce/'+id);return}
+    u.credits--;doUnlock(u,l,'credit');save();toast('Coordonnées débloquées avec 1 crédit.','ok');go('/annonce/'+id);
+  },
+  geo:function(){
+    if(!navigator.geolocation){toast('Géolocalisation non disponible.','err');return}
+    navigator.geolocation.getCurrentPosition(function(p){document.getElementById('f_lat').value=p.coords.latitude.toFixed(6);document.getElementById('f_lng').value=p.coords.longitude.toFixed(6);toast('Position GPS renseignée.','ok')},function(){toast('Position refusée ou indisponible.','err')},{enableHighAccuracy:true,timeout:10000});
+  },
+  photos:function(inp){
+    var files=Array.prototype.slice.call(inp.files),room=4-formPhotos.length;
+    if(room<=0){toast('4 photos maximum.','err');inp.value='';return}
+    files.slice(0,room).forEach(function(f){
+      var rd=new FileReader();
+      rd.onload=function(){var im=new Image();im.onload=function(){
+        var s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);
+        c.getContext('2d').drawImage(im,0,0,c.width,c.height);formPhotos.push(c.toDataURL('image/jpeg',.72));document.getElementById('pv').innerHTML=photoPrev();
+      };im.src=rd.result};rd.readAsDataURL(f);
+    });
+    inp.value='';
+  },
+  delPhoto:function(i){formPhotos.splice(i,1);document.getElementById('pv').innerHTML=photoPrev()},
+  saveListing:function(e,id){
+    e.preventDefault();var u=me();
+    var cm=communeFind(v('f_ville'));
+    if(!cm){toast('Choisissez une commune dans la liste des 77 communes du Bénin.','err');return false}
+    var lat=parseFloat(v('f_lat')),lng=parseFloat(v('f_lng'));
+    if(isNaN(lat)||isNaN(lng)||Math.abs(lat)>90||Math.abs(lng)>180){toast('Coordonnées GPS invalides.','err');return false}
+    var data={titre:v('f_titre').trim(),ville:cm.n,quartier:v('f_quartier').trim(),repere:v('f_repere').trim(),adresse:v('f_adresse').trim(),lat:lat,lng:lng,prix:Number(v('f_prix')),caution:Number(v('f_caution')),nb:Number(v('f_nb')),dispo:v('f_dispo'),tel:v('f_tel').trim(),desc:v('f_desc').trim(),equip:Array.prototype.map.call(document.querySelectorAll('input[name=feq]:checked'),function(x){return x.value}),photos:formPhotos.slice()};
+    if(id){var l=listing(id);Object.keys(data).forEach(function(k){l[k]=data[k]});save();toast('Annonce modifiée.','ok');go(u.role==='admin'?'/admin':'/mes-annonces')}
+    else{data.id=nid('l');data.ownerId=u.id;data.statut='active';data.valide='pending';data.reactAt=0;data.deleted=false;data.date=nowT();db.listings.push(data);
+      db.users.filter(function(x){return x.role==='admin'}).forEach(function(a){notify(a.id,'Annonce à valider','Nouvelle annonce : « '+data.titre+' ».')});
+      save();toast('Annonce envoyée ! Elle sera visible après validation par l’équipe.','ok');go('/mes-annonces')}
+    return false;
+  },
+  saveProfile:function(e){
+    e.preventDefault();var u=me(),tel=v('p_tel').trim(),email=v('p_email').trim().toLowerCase();
+    if(db.users.some(function(x){return x.id!==u.id&&(normTel(x.tel)===normTel(tel)||(email&&x.email===email))})){toast('Téléphone ou e-mail déjà utilisé.','err');return false}
+    u.nom=v('p_nom').trim();u.tel=tel;u.email=email;if(v('p_mdp'))u.mdp=v('p_mdp');save();toast('Profil mis à jour.','ok');render(false);return false;
+  },
+  tab:function(t){adminTab=t;render(false)},
+  terms:function(){
+    A.closeModal();
+    var d=document.createElement('div');d.id='modal';d.className='ov';
+    d.innerHTML='<div class="mb"><button class="btn s o x" type="button" onclick="A.closeModal()">✕ Fermer</button>'+vTerms()+'</div>';
+    d.addEventListener('mousedown',function(e){if(e.target===d)A.closeModal()});
+    document.body.appendChild(d);document.body.style.overflow='hidden';
+  },
+  closeModal:function(){var m=document.getElementById('modal');if(m){m.remove();document.body.style.overflow=''}},
+  admUser:function(id,a){
+    var u=user(id);if(!u||u.role==='admin')return;
+    if(a==='susp')u.suspendu=true;if(a==='react')u.suspendu=false;
+    if(a==='del'){if(!confirm('Supprimer ce compte ?'))return;db.users=db.users.filter(function(x){return x.id!==id});db.listings.forEach(function(l){if(l.ownerId===id)l.deleted=true})}
+    save();render(false);
+  },
+  admList:function(id,a){
+    var l=listing(id);if(!l)return;
+    if(a==='ok'){l.valide='ok';notify(l.ownerId,'Annonce validée','Votre annonce « '+l.titre+' » est maintenant visible par les démarcheurs.')}
+    if(a==='refuse'){l.valide='refuse';notify(l.ownerId,'Annonce refusée','Votre annonce « '+l.titre+' » a été refusée. Modifiez-la puis contactez l’administration.','warn')}
+    if(a==='react'){l.statut='active';l.reactAt=nowT();notify(l.ownerId,'Annonce réactivée','Votre annonce « '+l.titre+' » est de nouveau active.')}
+    if(a==='del'){if(!confirm('Supprimer cette annonce ?'))return;l.deleted=true}
+    save();render(false);
+  },
+  skip:function(){db.offset+=H24+60000;sweep();save();toast('Temps avancé de 24 h.');render(false)},
+  reset:function(){if(!confirm('Effacer toutes les données et revenir à la démonstration ?'))return;localStorage.removeItem(KEY);db=seed();go('/');render()}
+};
+function v(id){var e=document.getElementById(id);return e?e.value:''}
+function ack(){var e=document.getElementById('ack');return !!(e&&e.checked)}
+
+/* ---------- liste déroulante des communes ---------- */
+function ddOf(i){return i.parentNode.querySelector('.dd')}
+function ddOpen(i){
+  var dd=ddOf(i),res=communeSearch(i.value);
+  dd.innerHTML=res.length?res.map(function(c){return '<li role="option" data-v="'+esc(c.n)+'">'+hl(c.n,i.value)+'<small>'+esc(c.d)+'</small></li>'}).join(''):'<li class="no">Aucune commune ne commence par « '+esc(i.value.trim())+' »</li>';
+  dd.classList.remove('hide');
+}
+function ddClose(){Array.prototype.forEach.call(document.querySelectorAll('.dd'),function(d){d.classList.add('hide')})}
+function isCombo(el){return !!(el&&el.matches&&el.matches('input[data-combo]'))}
+document.addEventListener('focusin',function(e){if(isCombo(e.target))ddOpen(e.target)});
+document.addEventListener('input',function(e){if(isCombo(e.target))ddOpen(e.target)});
+document.addEventListener('mousedown',function(e){
+  var li=e.target.closest&&e.target.closest('.dd li[data-v]');
+  if(li){e.preventDefault();var i=li.closest('.cmb').querySelector('input');i.value=li.getAttribute('data-v');ddOf(i).classList.add('hide');return}
+  if(!(e.target.closest&&e.target.closest('.cmb')))ddClose();
+});
+document.addEventListener('keydown',function(e){
+  var i=e.target;if(!isCombo(i))return;
+  var dd=ddOf(i),items=dd.querySelectorAll('li[data-v]'),cur=dd.querySelector('li.act'),idx=cur?Array.prototype.indexOf.call(items,cur):-1;
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+    e.preventDefault();if(dd.classList.contains('hide'))ddOpen(i);
+    items=dd.querySelectorAll('li[data-v]');if(!items.length)return;
+    if(cur)cur.classList.remove('act');
+    idx=e.key==='ArrowDown'?(idx+1)%items.length:(idx<=0?items.length-1:idx-1);
+    items[idx].classList.add('act');items[idx].scrollIntoView({block:'nearest'});
+  }else if(e.key==='Enter'){
+    if(!dd.classList.contains('hide')&&cur){e.preventDefault();i.value=cur.getAttribute('data-v');dd.classList.add('hide')}
+  }else if(e.key==='Escape'||e.key==='Tab'){dd.classList.add('hide')}
+});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+window.addEventListener('hashchange',function(){var h=location.hash.replace(/^#/,'')||'/';if(h!==cur){cur=h;render()}});
+/* tous les liens internes passent par ce gestionnaire : ils fonctionnent même dans un aperçu isolé */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#/"]');if(!a)return;
+  e.preventDefault();
+  if(a.hasAttribute('data-modal')){A.terms();return}
+  A.closeModal();A.closeMenu();go(a.getAttribute('href').slice(1));
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')A.closeModal()});
+render();
+})();
+</script>
+</body>
+</html>
